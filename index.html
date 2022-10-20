@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <title>INSTAR OAuth2</title>
+  </head>
+  <body>
+    <header><h1>INSTAR OAuth2</h1></header>
+    <main>
+      <code>
+        Client -- Request Access Token --> OAuth2 Server (requires `client_id` & `client_secret`)
+      </code>
+      <br/>
+      <code>
+        OAuth2 Server -- Grant Access Token --> Client
+      </code>
+      <br/>
+      <code>
+        Client -- API Call --> Resource Server (requires `access_token`)
+      </code>
+      <br/>
+      <code>
+        Resource Server -- Data Response --> Client
+      </code>
+      <br/><br/>
+      <h2>Resource Server</h2>
+      <code>http://192.168.2.112:9096/protected</code>
+      <br/><br/>
+      <h2>Generate INSTAR ID</h2>
+      <code>http://192.168.2.112:9096/credentials</code>
+      <br/><br/>
+      <h2>Get Access Token from OAuth Server</h2>
+      <code>http://192.168.2.112:9096/token?grant_type=client_credentials&client_id=YOUR_CLIENT_ID&client_secret=YOUR_CLIENT_SECRET&scope=all</code>
+      <br/><br/>
+      <h2>Use Access Token to access Resource Server</h2>
+      <code>http://192.168.2.112:9096/protected?access_token=YOUR_ACCESS_TOKEN</code>
+    </main>
+    <footer></footer>
+  </body>
+</html>
